@@ -1,0 +1,204 @@
+:root {
+    --color-primaire: #17e0b2;
+    --color-secondaire: #33424A;
+    --color-text-white: #EEEEEE;
+    --color-text-vert: #004D40;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+#header-min-viewport {
+    display: none;
+}
+
+#headear-large-viewport {
+    display: grid;
+    grid-template-columns: 1fr 15fr;
+    grid-template-rows: 0.5fr 1fr;
+    width: 90%;
+    position: fixed;
+    top: 0;
+    left: 5%;
+    font-size: clamp(0.8rem, 5vw, 1rem);
+}
+
+#logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    grid-column: 1/2;
+    grid-row: 1/3;
+    font-size: 1rem;
+    border-radius: 0 0 15px 15px;
+    background-color: var(--color-text-white);
+}
+
+/*design le A du logo*/
+#logo span:first-child {
+    color: var(--color-primaire);
+    font-size: 3.5rem;
+}
+
+#logo span {
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+}
+
+.navbar>ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    flex: 0.5;
+    flex-wrap: wrap;
+}
+
+.navbar>ul>li {
+    margin-left: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.navbar.links-page {
+    grid-column: 2/-1;
+    grid-row: 1/2;
+    background-color: var(--color-primaire);
+    color: var(--color-text-vert);
+
+}
+
+.navbar.links-page .navbar-link {
+    color: var(--color-text-vert);
+    text-decoration: none;
+}
+
+.navbar.links-page>ul>li:hover::before {
+    content: "";
+    width: 60px;
+    height: 25px;
+    background-color: rgba(238, 206, 159, 0.5);
+    position: absolute;
+    border-radius: 25% 25% 50% 25%;
+    animation: transition-bg 0.3s ease-in-out;
+}
+
+@keyframes transition-bg {
+    0% {
+        background-color: none;
+        transform: translateX(0px);
+        width: 35px;
+    }
+
+    100% {
+        background-color: rgba(238, 206, 159, 0.5);
+        transform: translateX(5px);
+        width: 60px;
+    }
+}
+
+.navbar.links-page form {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-text-white);
+}
+
+.navbar.links-page form input[type="search"] {
+    border: none;
+    outline: none;
+    background-color: var(--color-text-white);
+    height: 100%;
+    font-size: 1rem;
+    padding: 0 25px 0 25px;
+}
+
+.navbar.links-page form input[type="search"]+i {
+    background-color: var(--color-primaire);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    padding: 0px 15px 0px 15px;
+}
+
+.navbar.links-projets {
+    grid-column: 2/-1;
+    grid-row: 2/-1;
+    background-color: var(--color-secondaire);
+    color: var(--color-text-white);
+    border-radius: 0 0 15px 15px;
+}
+
+#headear-large-viewport .donate {
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: var(--color-text-white);
+    font-weight: 700;
+    margin-right: 10px;
+
+}
+
+/*sous menu */
+.sous-menu {
+    display: none;
+    border-radius: 0 0 15px 15px;
+    padding: 25px;
+}
+
+/* Affichage du sous-menu lors du survol */
+.links-projets>ul>li:hover>.sous-menu {
+    display: block;
+    position: absolute;
+    background-color: var(--color-secondaire);
+}
+
+.responsive-web:hover,
+.javascript:hover,
+.libraries-button:hover+.javascript,
+.data-visualization-buttonhover {
+    display: block;
+    position: absolute;
+    background-color: var(--color-secondaire);
+}
+
+.sous-menu>li {
+    list-style: none;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+.sous-menu>li:hover {
+    background-color: rgba(238, 206, 159, 0.3);
+    cursor: pointer;
+
+}
+
+section {
+    min-height: 100vh;
+    width: 100%;
+}
