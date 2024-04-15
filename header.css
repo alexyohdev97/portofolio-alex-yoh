@@ -150,7 +150,7 @@ html {
     border-radius: 0 0 15px 15px;
 }
 
-#headear-large-viewport .donate {
+.donate {
     font-size: 1rem;
     padding: 10px;
     border-radius: 5px;
